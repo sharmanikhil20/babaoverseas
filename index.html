@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Baba Overseas — global trade and sourcing of brass, aluminium and copper scrap from India.">
+<title>Baba Overseas | Global Metal Trade</title>
+<style>
+:root{
+  --blue:#07366f;
+  --blue2:#0c4d98;
+  --red:#c5161d;
+  --red2:#c5161d;
+  --ink:#101b2b;
+  --muted:#5f6b79;
+  --soft:#f5f8fc;
+  --line:#dfe6ef;
+  --white:#fff;
+  --max:1220px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.container{width:min(calc(100% - 44px),var(--max));margin:auto}
+
+/* Header */
+header{
+  position:sticky;
+  top:0;
+  left:auto;
+  right:auto;
+  z-index:90;
+  width:100%;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(7,54,111,.1);
+}
+.nav{height:88px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.logo{width:190px;height:auto}
+.navlinks{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:700;color:#344052}
+.navlinks a{position:relative}
+.navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:2px;background:var(--red);transition:.25s}
+.navlinks a:hover:after{right:0}
+.navbtn{background:var(--blue);color:#fff;padding:12px 18px;border-radius:4px;font-size:13px;font-weight:800;letter-spacing:.04em}
+.navbtn:hover{background:var(--blue2)}
+.menu{display:none;background:none;border:0;font-size:24px;color:var(--blue)}
+
+/* Hero */
+.hero{padding-top:88px;min-height:790px;display:flex;align-items:center;position:relative;overflow:hidden;background:#fff}
+.hero-photo{position:absolute;inset:88px 0 0 48%;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.9) 10%,rgba(255,255,255,.25) 62%,rgba(7,54,111,.12))}
+.hero-content{position:relative;z-index:2;width:60%;padding:90px 0}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-weight:900;margin-bottom:20px}
+.hero h1{font-size:clamp(50px,6.3vw,84px);line-height:.98;letter-spacing:-.055em;color:var(--blue);max-width:770px}
+.hero h1 span{color:var(--red)}
+.hero-lead{font-size:19px;color:#536071;max-width:650px;margin:27px 0 31px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;border-radius:4px;font-size:14px;font-weight:850}
+.btn.primary{background:var(--red);color:#fff;box-shadow:0 8px 22px rgba(197,22,29,.18)}
+.btn.primary:hover{background:var(--red2)}
+.btn.secondary{border:1px solid #b9c5d3;color:var(--blue);background:#fff}
+.btn.secondary:hover{border-color:var(--blue);background:var(--soft)}
+.trustline{display:flex;align-items:center;gap:14px;margin-top:45px;color:#687586;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.trustline i{width:52px;height:2px;background:linear-gradient(90deg,var(--blue),var(--red));display:block}
+
+/* Intro stats */
+.stats{background:var(--blue);color:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 22px;border-right:1px solid rgba(255,255,255,.16)}
+.stat:last-child{border-right:0}
+.stat strong{font-size:25px;display:block}
+.stat span{font-size:11px;color:#b9c9dd;text-transform:uppercase;letter-spacing:.12em}
+
+/* General */
+section{padding:105px 0}
+.section-top{display:flex;justify-content:space-between;gap:50px;align-items:end;margin-bottom:48px}
+.section-top h2{font-size:clamp(37px,4.5vw,57px);line-height:1.02;letter-spacing:-.045em;color:var(--blue)}
+.section-top p{max-width:500px;color:var(--muted);font-size:16px}
+.redline{width:55px;height:4px;background:var(--red);margin:17px 0 0}
+
+/* Materials */
+.materials{background:#fff}
+.material-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.material{border:1px solid var(--line);background:#fff;padding:30px;min-height:250px;position:relative;overflow:hidden;transition:.25s}
+.material:hover{transform:translateY(-4px);box-shadow:0 16px 35px rgba(7,54,111,.09)}
+.material-no{font-size:11px;color:var(--red);font-weight:900;letter-spacing:.15em}
+.material h3{font-size:28px;color:var(--blue);margin:62px 0 10px;letter-spacing:-.03em}
+.material p{color:var(--muted);font-size:14px;max-width:330px}
+.material:after{content:"";position:absolute;width:120px;height:120px;border:16px solid rgba(7,54,111,.045);border-radius:50%;right:-45px;bottom:-45px}
+
+/* About */
+.about{background:var(--soft)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+.about h2{font-size:clamp(38px,4.5vw,59px);line-height:1;letter-spacing:-.05em;color:var(--blue);margin-bottom:24px}
+.about p{color:var(--muted);font-size:17px;max-width:630px;margin-bottom:17px}
+.about-card{background:#fff;border:1px solid var(--line);padding:37px;box-shadow:0 15px 40px rgba(7,54,111,.06)}
+.about-card h3{font-size:25px;color:var(--blue);margin-bottom:22px}
+.about-row{display:flex;justify-content:space-between;gap:20px;padding:17px 0;border-top:1px solid var(--line);font-size:14px}
+.about-row span{color:var(--muted)}
+
+/* Gallery */
+.gallery{background:#fff}
+.gallery-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-auto-rows:260px;gap:14px}
+.gallery-item{overflow:hidden;border-radius:3px;position:relative;background:#ddd}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery-item:hover img{transform:scale(1.045)}
+.gallery-item.tall{grid-row:span 2}
+.gallery-item.wide{grid-column:span 2}
+.gallery-caption{position:absolute;left:16px;bottom:16px;background:rgba(7,54,111,.9);color:#fff;padding:8px 11px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+
+/* Process */
+.process{background:var(--soft)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.step{padding:30px 24px 5px 0;border-right:1px solid var(--line)}
+.step:not(:first-child){padding-left:24px}
+.step:last-child{border-right:0}
+.step b{font-size:12px;color:var(--red);letter-spacing:.15em}
+.step h3{font-size:22px;color:var(--blue);margin:25px 0 8px}
+.step p{color:var(--muted);font-size:14px}
+
+/* CTA */
+.cta{background:linear-gradient(120deg,var(--blue),#0b468b);color:#fff;position:relative;overflow:hidden}
+.cta:after{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(255,255,255,.1);border-radius:50%;right:-160px;top:-170px;box-shadow:0 0 0 70px rgba(255,255,255,.025)}
+.cta-grid{display:flex;justify-content:space-between;gap:50px;align-items:center;position:relative;z-index:1}
+.cta h2{font-size:clamp(40px,5vw,65px);line-height:1;letter-spacing:-.05em}
+.cta p{color:#c8d7e9;max-width:620px;margin-top:18px}
+.cta .btn.secondary{color:#fff;border-color:rgba(255,255,255,.4);background:transparent}
+
+/* Contact */
+.contact{background:#fff}
+.contact-grid{display:block}
+.contact h2{font-size:clamp(40px,5vw,63px);line-height:1;color:var(--blue);letter-spacing:-.05em}
+.contact-copy p{color:var(--muted);max-width:700px;margin:20px 0 32px}
+.contact-links{display:flex;flex-direction:column;gap:8px;width:min(100%,430px)}
+.contact-link{display:flex;align-items:center;gap:12px;width:100%;padding:8px 0;color:var(--blue);transition:.2s}
+a.contact-link:hover{color:var(--red);transform:translateX(4px)}
+.contact-icon{width:34px;height:34px;flex:0 0 34px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;font-weight:900;font-size:15px}
+.linkedin-icon{font-size:12px}
+.contact-link span:nth-child(2){font-size:15px;font-weight:800}
+.contact-arrow{margin-left:auto;color:var(--red);font-size:16px;font-weight:900}
+.contact-static{cursor:default}
+
+/* Footer */
+footer{background:#081f3f;color:#aabbd0;padding:25px 0;font-size:12px}
+.footer{display:flex;justify-content:space-between;gap:20px}
+.footer strong{color:#fff}
+
+/* Responsive */
+
+
+
+@media(max-width:700px){
+  .utility-bar,.utility-inner{height:34px;min-height:34px}
+  .utility-inner{width:calc(100% - 20px);gap:7px;font-size:9px;letter-spacing:.01em}
+}
+@media(max-width:900px){
+ .navlinks{display:none}.menu{display:block}.navbtn{display:none}
+ .hero{min-height:730px}.hero-photo{inset:88px 0 0 0;opacity:.28}.hero-content{width:100%;padding:80px 0}
+ .hero-photo:after{background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.85) 60%,rgba(255,255,255,.5))}
+ .material-grid,.about-grid{grid-template-columns:1fr}
+
+ .stats-grid{grid-template-columns:repeat(2,1fr)}
+ .stat:nth-child(2){border-right:0}.stat{border-bottom:1px solid rgba(255,255,255,.16)}
+ .section-top{display:block}.section-top p{margin-top:20px}
+ .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:220px}
+ .gallery-item.tall{grid-row:span 2}.gallery-item.wide{grid-column:span 2}
+ .process-grid{grid-template-columns:1fr 1fr}
+ .step:nth-child(2){border-right:0}.step:nth-child(3){border-top:1px solid var(--line)}
+ .cta-grid{display:block}.cta .buttons{margin-top:28px}
+}
+@media(max-width:560px){
+ .container{width:min(calc(100% - 28px),var(--max))}
+ .nav{height:74px}.logo{width:160px}.hero{padding-top:74px;min-height:680px}.hero-photo{inset:74px 0 0}.hero-content{padding:70px 0}
+ .hero h1{font-size:48px}.hero-lead{font-size:17px}
+ section{padding:78px 0}.stats-grid{grid-template-columns:1fr 1fr}
+ .gallery-grid{grid-template-columns:1fr;grid-auto-rows:240px}.gallery-item.wide{grid-column:auto}.gallery-item.tall{grid-row:auto}
+
+ .process-grid{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line);padding:25px 0!important}.step:last-child{border-bottom:0}
+ .footer{display:block}.footer span{display:block;margin-top:7px}
+}
+
+/* Baba Overseas utility bar */
+.utility-bar{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  position:relative !important;
+  z-index:1000 !important;
+  width:100% !important;
+  height:42px !important;
+  min-height:42px !important;
+  background:#C5161D !important;
+  color:#fff !important;
+  box-sizing:border-box;
+}
+.utility-inner{
+  width:min(1200px, calc(100% - 40px));
+  height:42px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  white-space:nowrap;
+  overflow:hidden;
+  font-size:12px;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:.01em;
+}
+.utility-bar a,
+.utility-bar a:visited,
+.utility-bar .utility-value{
+  color:#fff !important;
+  text-decoration:none;
+}
+.utility-bar a:hover{text-decoration:underline}
+.utility-separator{color:#fff;font-weight:400;opacity:.8}
+
+
+/* Baba Overseas utility bar */
+.utility-bar{
+  display:block;
+  position:relative;
+  width:100%;
+  height:36px;
+  min-height:36px;
+  background:#6E1017;
+  color:#fff;
+  box-sizing:border-box;
+  z-index:5;
+}
+.utility-inner{
+  width:min(1200px, calc(100% - 40px));
+  height:36px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  white-space:nowrap;
+  overflow:hidden;
+  font-size:11px;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:.035em;
+}
+.utility-separator{
+  color:#fff;
+  opacity:.55;
+  font-weight:400;
+}
+
+</style>
+</head>
+<body>
+<div class="utility-bar">
+  <div class="utility-inner">
+    <a href="mailto:babaoverseas89@yahoo.com" aria-label="Email Baba Overseas">Email: babaoverseas89@yahoo.com</a>
+    <span class="utility-separator">|</span>
+    <span>Delhi, India</span>
+    <span class="utility-separator">|</span>
+    <span>Established 1995</span>
+    <span class="utility-separator">|</span>
+    <span>30+ Years of Experience</span>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" aria-label="Baba Overseas home"><img class="logo" src="assets/logo.png" alt="Baba Overseas"></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#materials">Materials</a>
+      <a href="#gallery">Inventory</a>
+      <a href="#process">How We Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="navbtn" href="#contact">ENQUIRE NOW</a>
+    <button class="menu" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-photo">
+    <img src="assets/scrap-7.jpg" alt="Non-ferrous metal scrap inventory">
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="kicker">Established 1995 · 30+ Years of Experience · India</div>
+      <h1>Global trade.<br><span>Built on trust.</span></h1>
+      <p class="hero-lead">With roots going back to 1995, Baba Overseas brings more than 30 years of trading experience to the sourcing and movement of non-ferrous metal scrap across markets.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#contact">Request a Quote</a>
+        <a class="btn secondary" href="#gallery">View Our Inventory</a>
+      </div>
+      <div class="trustline"><i></i> Established 1995 · Brass · Aluminium · Copper Scrap</div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><strong>Brass</strong><span>Non-ferrous trading</span></div>
+    <div class="stat"><strong>Aluminium</strong><span>Non-ferrous trading</span></div>
+    <div class="stat"><strong>Copper</strong><span>Non-ferrous trading</span></div>
+    <div class="stat"><strong>India</strong><span>Global sourcing base</span></div>
+  </div>
+</div>
+
+<section id="materials" class="materials">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <div class="kicker">What we trade</div>
+        <h2>Focused on the materials that matter.</h2>
+        <div class="redline"></div>
+      </div>
+      <p>We focus on non-ferrous scrap trading and sourcing, with an emphasis on clear specifications, competitive procurement and dependable execution.</p>
+    </div>
+    <div class="material-grid">
+      <article class="material"><div class="material-no">01 / BRASS</div><h3>Brass Scrap</h3><p>Trading and sourcing of brass scrap for recycling, processing and industrial requirements.</p></article>
+      <article class="material"><div class="material-no">02 / ALUMINIUM</div><h3>Aluminium Scrap</h3><p>Sourcing aluminium scrap according to customer specifications, quantity and delivery requirements.</p></article>
+      <article class="material"><div class="material-no">03 / COPPER</div><h3>Copper Scrap</h3><p>Commercial sourcing and trading of copper scrap for established recycling and industrial buyers.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container about-grid">
+    <div>
+      <div class="kicker">About Baba Overseas</div>
+      <h2>A trading business built around relationships.</h2>
+      <p>Baba Overseas is an India-based metal trading and sourcing business focused on brass, aluminium and copper scrap.</p>
+      <p>Our approach is deliberately straightforward: understand the requirement, source the right material, communicate clearly and execute the transaction responsibly.</p>
+    </div>
+    <div class="about-card">
+      <h3>Our approach</h3>
+      <div class="about-row"><strong>Requirement-led sourcing</strong><span>Specifications first</span></div>
+      <div class="about-row"><strong>Commercial clarity</strong><span>Transparent communication</span></div>
+      <div class="about-row"><strong>Relationship driven</strong><span>Long-term trade</span></div>
+      <div class="about-row"><strong>Global outlook</strong><span>India-based sourcing</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <div class="kicker">Our material inventory</div>
+        <h2>Real material. No stock imagery.</h2>
+        <div class="redline"></div>
+      </div>
+      <p>A selection of actual scrap material images provided by Baba Overseas, giving buyers a direct look at the type of inventory we handle.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item tall"><img src="assets/scrap-1.jpg" alt="Metal scrap inventory"><span class="gallery-caption">Scrap Inventory</span></div>
+      <div class="gallery-item"><img src="assets/scrap-2.jpg" alt="Sorted metal scrap"><span class="gallery-caption">Non-Ferrous Scrap</span></div>
+      <div class="gallery-item"><img src="assets/scrap-3.jpg" alt="Small metal components"><span class="gallery-caption">Components & Scrap</span></div>
+      <div class="gallery-item wide"><img src="assets/scrap-4.jpg" alt="Mixed metal scrap"><span class="gallery-caption">Material Stock</span></div>
+      <div class="gallery-item"><img src="assets/scrap-5.jpg" alt="Metal scrap stock"><span class="gallery-caption">Metal Stock</span></div>
+      <div class="gallery-item"><img src="assets/scrap-6.jpg" alt="Brass-toned scrap material"><span class="gallery-caption">Non-Ferrous Material</span></div>
+      <div class="gallery-item wide"><img src="assets/scrap-8.jpg" alt="Metal scrap inventory"><span class="gallery-caption">Trading Inventory</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <div class="kicker">How we work</div>
+        <h2>Simple process. Serious execution.</h2>
+        <div class="redline"></div>
+      </div>
+      <p>Every enquiry starts with the exact requirement and moves through sourcing, commercial alignment and execution.</p>
+    </div>
+    <div class="process-grid">
+      <div class="step"><b>01</b><h3>Requirement</h3><p>Share material, specification, quantity and delivery requirements.</p></div>
+      <div class="step"><b>02</b><h3>Sourcing</h3><p>We identify suitable supply options against the requirement.</p></div>
+      <div class="step"><b>03</b><h3>Commercials</h3><p>Pricing, specifications and terms are aligned before execution.</p></div>
+      <div class="step"><b>04</b><h3>Execution</h3><p>We coordinate the transaction and keep communication moving.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta-grid">
+    <div>
+      <h2>Looking for a reliable scrap supply partner?</h2>
+      <p>Send us your material requirement and let’s discuss the right sourcing route for your business.</p>
+    </div>
+    <div class="buttons">
+      <a class="btn primary" href="#contact">Send an Enquiry</a>
+      <a class="btn secondary" href="#gallery">See Inventory</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container contact-grid">
+    <div class="contact-copy">
+      <div class="kicker">Get in touch</div>
+      <h2>Let’s talk trade.</h2>
+      <p>For enquiries, share the material, grade or specification, quantity and destination. We can then discuss availability and commercial terms.</p>
+
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:babaoverseas89@yahoo.com" aria-label="Email Baba Overseas">
+          <span class="contact-icon">✉</span><span>Email</span><span class="contact-arrow">↗</span>
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/company/baba-overseas-delhi/" target="_blank" rel="noopener noreferrer" aria-label="Baba Overseas LinkedIn">
+          <span class="contact-icon linkedin-icon">in</span><span>LinkedIn</span><span class="contact-arrow">↗</span>
+        </a>
+        <div class="contact-link contact-static">
+          <span class="contact-icon">⌖</span><span>Delhi, India</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <span>© 2026 <strong>Baba Overseas</strong>. All rights reserved.</span>
+    <span>Global Trade. Built on Trust.</span>
+  </div>
+</footer>
+
+<script>
+document.querySelector('.menu')?.addEventListener('click', () => {
+  const nav = document.querySelector('.navlinks');
+  const open = nav.style.display === 'flex';
+  nav.style.display = open ? 'none' : 'flex';
+  if (!open) {
+    nav.style.position='absolute'; nav.style.top='74px'; nav.style.left='0'; nav.style.right='0';
+    nav.style.padding='18px 22px'; nav.style.background='#fff'; nav.style.flexDirection='column'; nav.style.alignItems='flex-start';
+    nav.style.borderBottom='1px solid #dfe6ef';
+  }
+});
+</script>
+</body>
+</html>

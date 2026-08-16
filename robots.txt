@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /card/
+Disallow: /card/sunder-sharma.vcf
+Allow: /
+
+Sitemap: https://babaoverseas.in/sitemap.xml
